@@ -1,55 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grass Karma – Share the Mow</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body class="bg-green-50 text-gray-800">
-    <div class="min-h-screen flex flex-col items-center justify-center px-4 py-12">
-      <div class="max-w-xl text-center">
-        <h1 class="text-4xl md:text-5xl font-extrabold mb-4">
-          🌱 Grass Karma
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grass Karma – Share the Mow</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --gk-green-start: #8bd34c;
+      --gk-green-end:   #39b54a;
+    }
+    .hero-bg {
+      background: linear-gradient(135deg, var(--gk-green-start) 0%, var(--gk-green-end) 100%);
+    }
+  </style>
+</head>
+
+<body class="text-gray-800 antialiased scroll-smooth">
+
+  <!-- ▸ HERO -->
+  <header class="hero-bg">
+    <div class="max-w-7xl mx-auto px-6 py-20 lg:flex lg:items-center lg:gap-16">
+      <img
+        src="images/hero.png"
+        alt="Neighbours mowing nature strips together"
+        class="w-full max-w-md mx-auto mb-10 lg:mb-0 lg:mx-0 rounded-xl shadow-lg"
+      />
+      <div class="text-center lg:text-left">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white">
+          Share the Mow,<br class="hidden md:inline"> Grow the Karma
         </h1>
-        <p class="text-lg md:text-xl text-gray-700 mb-8">
-          Australia's first app to help neighbours <strong>collaborate on mowing</strong> their nature strips. Share the work, save money, and make your street look great together.
+        <p class="mt-4 text-lg md:text-xl text-white/90">
+          Grass Karma makes it <em>easy</em> for streets to organise mowing rosters
+          or pool funds for a pro—saving time, money&nbsp;and stress.
         </p>
 
-        <div class="bg-white p-6 rounded-xl shadow-lg mb-10">
-          <h2 class="text-xl font-semibold mb-3">How it works:</h2>
-          <ul class="text-left space-y-2 list-disc list-inside text-gray-600">
-            <li>📅 Create a street-wide mowing roster with your neighbours</li>
-            <li>🤝 Team up and take turns — or</li>
-            <li>💸 Pitch in and pay a local or pro to mow the entire street</li>
-          </ul>
+        <!-- LinkedIn Button -->
+        <div class="mt-8">
+          <a href="https://linkedin.com/company/grasskarma/"
+             target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 bg-white text-green-700 font-semibold px-6 py-3 rounded-lg
+                    hover:bg-green-50 transition shadow">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 448 512">
+              <path d="M100.3 448H7.4V149.1h92.9zm-46.5-338C24 110 0 85.6 0 55.7A55.7 55.7 0 0 1 55.8 0c30.8 0 55.2 24.8 55.2 55.7 0 29.9-24.4 54.3-55.2 54.3zM447.8 448h-92.6V302.4c0-34.8-.7-79.6-48.4-79.6-48.5 0-55.9 37.9-55.9 77v148.2h-92.5V149.1h88.8v40.8h1.3c12.4-23.5 42.6-48.4 87.7-48.4 93.8 0 111.2 61.7 111.2 141.9V448z"/>
+            </svg>
+            Connect on LinkedIn
+          </a>
         </div>
+      </div>
+    </div>
+  </header>
 
-        <form class="w-full max-w-sm mx-auto">
-          <label class="block text-sm font-medium mb-1 text-left" for="email">Join our early access list</label>
-          <div class="flex gap-2">
-            <input
-              type="email"
-              id="email"
-              placeholder="you@example.com"
-              class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
-              required
-            />
-            <button
-              type="submit"
-              class="bg-green-600 text-white font-semibold px-4 py-2 rounded-lg hover:bg-green-700 transition"
-            >
-              Join
-            </button>
-          </div>
-        </form>
+  <!-- ▸ HOW IT WORKS -->
+  <section id="how" class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+        How Grass Karma Works
+      </h2>
 
-        <p class="mt-6 text-sm text-gray-500">We’ll let you know when it launches!</p>
+      <div class="grid gap-12 md:grid-cols-3">
+        <div class="text-center">
+          <span class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-6
+                         text-green-600 text-xl font-bold">1</span>
+          <h3 class="text-xl font-semibold mb-2">Connect</h3>
+          <p class="text-gray-600">
+            Invite neighbours on your street; Grass Karma auto-detects addresses so everyone joins
+            the right <em>street group</em>.
+          </p>
+        </div>
+        <div class="text-center">
+          <span class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-6
+                         text-green-600 text-xl font-bold">2</span>
+          <h3 class="text-xl font-semibold mb-2">Choose a Plan</h3>
+          <p class="text-gray-600">
+            Vote for a <strong>Roster</strong> (take turns) or <strong>Pooling</strong> (hire a pro).
+            Switch at any time when circumstances change.
+          </p>
+        </div>
+        <div class="text-center">
+          <span class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-6
+                         text-green-600 text-xl font-bold">3</span>
+          <h3 class="text-xl font-semibold mb-2">Enjoy a Greener Street</h3>
+          <p class="text-gray-600">
+            Your nature strip stays trim, friendly vibes go up, and property kerb appeal rises.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ▸ BENEFITS -->
+  <section id="benefits" class="py-24 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">
+        Why Team Up?
+      </h2>
+
+      <div class="flex flex-col-reverse md:flex-row items-center gap-12 mb-24">
+        <div class="md:w-1/2">
+          <h3 class="text-2xl font-semibold mb-4">Save More Together</h3>
+          <p class="text-gray-600 mb-4">
+            A single landscaper mowing ten adjacent lawns in one run charges <strong>up to&nbsp;40 % less</strong>
+            than ten individual call-outs. Bulk is cheaper!
+          </p>
+          <p class="text-gray-600">
+            Grass Karma handles splitting the invoice and reminders—no pesky cash chasing.
+          </p>
+        </div>
+        <img
+          src="images/pooled.png"
+          alt="Pooling funds illustration"
+          class="md:w-1/2 w-full rounded-xl shadow-md" />
       </div>
 
-      <footer class="mt-12 text-sm text-gray-400">
-        © 2025 Grass Karma — Share the Mow
-      </footer>
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <img
+          src="images/roster.png"
+          alt="Rotating roster illustration"
+          class="md:w-1/2 w-full rounded-xl shadow-md" />
+        <div class="md:w-1/2">
+          <h3 class="text-2xl font-semibold mb-4">Make the Roster Fair</h3>
+          <p class="text-gray-600 mb-4">
+            Prefer DIY? The rotating roster ensures everyone does their bit—and automatic reminders
+            mean no more awkward nudges.
+          </p>
+          <p class="text-gray-600">
+            Need a swap? One tap in the app finds a neighbour happy to trade.
+          </p>
+        </div>
+      </div>
     </div>
-  </body>
+  </section>
+
+  <!-- ▸ FINAL CTA -->
+  <section class="py-24 hero-bg text-white text-center">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">
+        Ready to grow good karma on your street?
+      </h2>
+      <p class="text-lg md:text-xl mb-8">
+        Follow Grass Karma on LinkedIn for launch updates and early access.
+      </p>
+
+      <a href="https://linkedin.com/company/grasskarma/"
+         target="_blank" rel="noopener"
+         class="inline-flex items-center gap-2 bg-white text-green-700 font-semibold px-6 py-3 rounded-lg
+                hover:bg-green-50 transition shadow">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 448 512">
+          <path d="M100.3 448H7.4V149.1h92.9zm-46.5-338C24 110 0 85.6 0 55.7A55.7 55.7 0 0 1 55.8 0c30.8 0 55.2 24.8 55.2 55.7 0 29.9-24.4 54.3-55.2 54.3zM447.8 448h-92.6V302.4c0-34.8-.7-79.6-48.4-79.6-48.5 0-55.9 37.9-55.9 77v148.2h-92.5V149.1h88.8v40.8h1.3c12.4-23.5 42.6-48.4 87.7-48.4 93.8 0 111.2 61.7 111.2 141.9V448z"/>
+        </svg>
+        Connect on LinkedIn
+      </a>
+    </div>
+  </section>
+
+  <footer class="py-8 bg-gray-200 text-center text-sm text-gray-600">
+    © 2025 Grass Karma — Share the Mow
+  </footer>
+</body>
 </html>
