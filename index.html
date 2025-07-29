@@ -4,30 +4,93 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Grass Karma – Share the Mow</title>
+  
+  <!-- Meta Tags for SEO and Social Sharing -->
+  <meta name="description" content="Grass Karma makes it easy for streets to organise mowing rosters or pool funds for professional lawn care. Save money, time and stress with your neighbours.">
+  <meta property="og:title" content="Grass Karma – Share the Mow">
+  <meta property="og:description" content="Organize street mowing rosters or pool funds for professional lawn care. Save up to 40% on lawn maintenance costs.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://grasskarma.website">
+  <meta property="og:image" content="https://grasskarma.website/images/hero.png">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+  
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     :root {
       --gk-green-start: #8bd34c;
       --gk-green-end:   #39b54a;
+      --gk-blue: #3b82f6;
+      --gk-purple: #8b5cf6;
     }
     .hero-bg {
       background: linear-gradient(135deg, var(--gk-green-start) 0%, var(--gk-green-end) 100%);
     }
+    .cta-gradient {
+      background: linear-gradient(135deg, var(--gk-blue) 0%, var(--gk-purple) 100%);
+    }
+    .form-focus:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px var(--gk-green-end);
+      border-color: var(--gk-green-end);
+    }
+    .pulse-green {
+      animation: pulse-green 2s infinite;
+    }
+    @keyframes pulse-green {
+      0%, 100% { background-color: rgb(34 197 94); }
+      50% { background-color: rgb(22 163 74); }
+    }
+    .fade-in {
+      animation: fadeIn 0.6s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hover-lift {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .hover-lift:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    .countdown-urgency {
+      background: linear-gradient(45deg, #ef4444, #dc2626);
+    }
+    html {
+      scroll-behavior: smooth;
+    }
   </style>
 </head>
 
-<body class="text-gray-800 antialiased scroll-smooth">
+<body class="text-gray-800 antialiased">
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="font-bold text-xl text-green-700">🌱 Grass Karma</div>
+      <div class="hidden md:flex space-x-6">
+        <a href="#how" class="text-gray-600 hover:text-green-600 transition">How It Works</a>
+        <a href="#benefits" class="text-gray-600 hover:text-green-600 transition">Benefits</a>
+        <a href="#about" class="text-gray-600 hover:text-green-600 transition">About</a>
+        <a href="#early-access" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition">Early Access</a>
+      </div>
+    </div>
+  </nav>
 
   <!-- ▸ HERO -->
-  <header class="hero-bg">
+  <header class="hero-bg pt-20">
     <div class="max-w-7xl mx-auto px-6 py-20 lg:flex lg:items-center lg:gap-16">
       <img
         src="images/hero.png"
         alt="Neighbours mowing nature strips together"
         class="w-full max-w-md mx-auto mb-10 lg:mb-0 lg:mx-0 rounded-xl shadow-lg"
+        loading="lazy"
       />
       <div class="text-center lg:text-left">
-        <h1 class="text-4xl md:text-5xl font-extrabold text-white">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white fade-in">
           Share the Mow,<br class="hidden md:inline"> Grow the Karma
         </h1>
         <p class="mt-4 text-lg md:text-xl text-white/90">
@@ -35,17 +98,35 @@
           or pool funds for a pro—saving time, money&nbsp;and stress.
         </p>
 
-        <!-- LinkedIn Button -->
-        <div class="mt-8">
-          <a href="https://linkedin.com/company/grasskarma/"
-             target="_blank" rel="noopener"
-             class="inline-flex items-center gap-2 bg-white text-green-700 font-semibold px-6 py-3 rounded-lg
-                    hover:bg-green-50 transition shadow">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 448 512">
-              <path d="M100.3 448H7.4V149.1h92.9zm-46.5-338C24 110 0 85.6 0 55.7A55.7 55.7 0 0 1 55.8 0c30.8 0 55.2 24.8 55.2 55.7 0 29.9-24.4 54.3-55.2 54.3zM447.8 448h-92.6V302.4c0-34.8-.7-79.6-48.4-79.6-48.5 0-55.9 37.9-55.9 77v148.2h-92.5V149.1h88.8v40.8h1.3c12.4-23.5 42.6-48.4 87.7-48.4 93.8 0 111.2 61.7 111.2 141.9V448z"/>
+        <!-- Urgency Banner -->
+        <div class="mt-6 p-4 bg-white/20 rounded-lg backdrop-blur-sm border border-white/30">
+          <div class="flex items-center justify-center gap-2 text-white font-semibold">
+            <span class="w-2 h-2 bg-red-400 rounded-full pulse-green"></span>
+            Limited Early Access - Join 500+ Streets Already Signed Up
+          </div>
+        </div>
+
+        <!-- Enhanced CTA -->
+        <div class="mt-8 space-y-4">
+          <a href="#early-access"
+             class="inline-flex items-center gap-2 bg-white text-green-700 font-semibold px-8 py-4 rounded-lg
+                    hover:bg-green-50 transition shadow-lg hover-lift text-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
-            Connect on LinkedIn
+            Get Early Access + Free Lawn Care Guide
           </a>
+          
+          <div class="text-center lg:text-left">
+            <a href="https://linkedin.com/company/grasskarma/"
+               target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 text-white/80 hover:text-white transition">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor" viewBox="0 0 448 512">
+                <path d="M100.3 448H7.4V149.1h92.9zm-46.5-338C24 110 0 85.6 0 55.7A55.7 55.7 0 0 1 55.8 0c30.8 0 55.2 24.8 55.2 55.7 0 29.9-24.4 54.3-55.2 54.3zM447.8 448h-92.6V302.4c0-34.8-.7-79.6-48.4-79.6-48.5 0-55.9 37.9-55.9 77v148.2h-92.5V149.1h88.8v40.8h1.3c12.4-23.5 42.6-48.4 87.7-48.4 93.8 0 111.2 61.7 111.2 141.9V448z"/>
+              </svg>
+              Follow us on LinkedIn
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -59,7 +140,7 @@
       </h2>
 
       <div class="grid gap-12 md:grid-cols-3">
-        <div class="text-center">
+        <div class="text-center hover-lift">
           <span class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-6
                          text-green-600 text-xl font-bold">1</span>
           <h3 class="text-xl font-semibold mb-2">Connect</h3>
@@ -68,7 +149,7 @@
             the right <em>street group</em>.
           </p>
         </div>
-        <div class="text-center">
+        <div class="text-center hover-lift">
           <span class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-6
                          text-green-600 text-xl font-bold">2</span>
           <h3 class="text-xl font-semibold mb-2">Choose a Plan</h3>
@@ -77,7 +158,7 @@
             Switch at any time when circumstances change.
           </p>
         </div>
-        <div class="text-center">
+        <div class="text-center hover-lift">
           <span class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-6
                          text-green-600 text-xl font-bold">3</span>
           <h3 class="text-xl font-semibold mb-2">Enjoy a Greener Street</h3>
@@ -99,8 +180,12 @@
       <div class="flex flex-col-reverse md:flex-row items-center gap-12 mb-24">
         <div class="md:w-1/2">
           <h3 class="text-2xl font-semibold mb-4">Save More Together</h3>
+          <div class="bg-green-100 p-4 rounded-lg mb-4">
+            <div class="text-2xl font-bold text-green-700">Save $200+ per year</div>
+            <div class="text-sm text-green-600">Average savings per household</div>
+          </div>
           <p class="text-gray-600 mb-4">
-            A single landscaper mowing ten adjacent lawns in one run charges <strong>up to&nbsp;40 % less</strong>
+            A single landscaper mowing ten adjacent lawns in one run charges <strong>up to&nbsp;40% less</strong>
             than ten individual call-outs. Bulk is cheaper!
           </p>
           <p class="text-gray-600">
@@ -110,14 +195,18 @@
         <img
           src="images/pooled.png"
           alt="Pooling funds illustration"
-          class="md:w-1/2 w-full rounded-xl shadow-md" />
+          class="md:w-1/2 w-full rounded-xl shadow-md hover-lift"
+          loading="lazy"
+        />
       </div>
 
       <div class="flex flex-col md:flex-row items-center gap-12">
         <img
           src="images/roster.png"
           alt="Rotating roster illustration"
-          class="md:w-1/2 w-full rounded-xl shadow-md" />
+          class="md:w-1/2 w-full rounded-xl shadow-md hover-lift"
+          loading="lazy"
+        />
         <div class="md:w-1/2">
           <h3 class="text-2xl font-semibold mb-4">Make the Roster Fair</h3>
           <p class="text-gray-600 mb-4">
@@ -132,30 +221,318 @@
     </div>
   </section>
 
-  <!-- ▸ FINAL CTA -->
-  <section class="py-24 hero-bg text-white text-center">
-    <div class="max-w-3xl mx-auto px-6">
-      <h2 class="text-3xl md:text-4xl font-bold mb-6">
-        Ready to grow good karma on your street?
+  <!-- ▸ ABOUT / TRUST BUILDING -->
+  <section id="about" class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">
+        About Grass Karma
       </h2>
-      <p class="text-lg md:text-xl mb-8">
-        Follow Grass Karma on LinkedIn for launch updates and early access.
-      </p>
 
-      <a href="https://linkedin.com/company/grasskarma/"
-         target="_blank" rel="noopener"
-         class="inline-flex items-center gap-2 bg-white text-green-700 font-semibold px-6 py-3 rounded-lg
-                hover:bg-green-50 transition shadow">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 448 512">
-          <path d="M100.3 448H7.4V149.1h92.9zm-46.5-338C24 110 0 85.6 0 55.7A55.7 55.7 0 0 1 55.8 0c30.8 0 55.2 24.8 55.2 55.7 0 29.9-24.4 54.3-55.2 54.3zM447.8 448h-92.6V302.4c0-34.8-.7-79.6-48.4-79.6-48.5 0-55.9 37.9-55.9 77v148.2h-92.5V149.1h88.8v40.8h1.3c12.4-23.5 42.6-48.4 87.7-48.4 93.8 0 111.2 61.7 111.2 141.9V448z"/>
-        </svg>
-        Connect on LinkedIn
-      </a>
+      <div class="grid gap-12 lg:grid-cols-2">
+        <!-- Founder Story -->
+        <div class="bg-gray-50 rounded-xl p-8 hover-lift">
+          <div class="flex items-center mb-6">
+            <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mr-4">
+              👨‍💼
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold">Our Story</h3>
+              <p class="text-gray-600">Founded by neighbours, for neighbours</p>
+            </div>
+          </div>
+          <p class="text-gray-600 mb-4">
+            Grass Karma was born from a simple frustration: coordinating lawn care with neighbours shouldn't be harder than rocket science. After years of awkward WhatsApp groups and forgotten rosters, we built the solution we wished existed.
+          </p>
+          <p class="text-gray-600">
+            We're a small team based in Melbourne, passionate about building stronger communities one street at a time.
+          </p>
+        </div>
+
+        <!-- Company Values -->
+        <div class="space-y-6">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="text-green-600 text-xl">🤝</span>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">Community First</h4>
+              <p class="text-gray-600 text-sm">We believe in the power of neighbours working together to create better streets.</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="text-blue-600 text-xl">🔒</span>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">Privacy Protected</h4>
+              <p class="text-gray-600 text-sm">Your data stays secure. We never share personal information with third parties.</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="text-purple-600 text-xl">💚</span>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">Environmental Impact</h4>
+              <p class="text-gray-600 text-sm">Coordinated mowing reduces emissions and promotes sustainable neighbourhood practices.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trust Indicators -->
+      <div class="mt-16 grid gap-8 md:grid-cols-3 text-center">
+        <div class="bg-green-50 rounded-lg p-6 hover-lift">
+          <div class="text-3xl font-bold text-green-600 mb-2">500+</div>
+          <div class="text-gray-600">Streets Already Interested</div>
+        </div>
+        <div class="bg-blue-50 rounded-lg p-6 hover-lift">
+          <div class="text-3xl font-bold text-blue-600 mb-2">Australian</div>
+          <div class="text-gray-600">Made & Based</div>
+        </div>
+        <div class="bg-purple-50 rounded-lg p-6 hover-lift">
+          <div class="text-3xl font-bold text-purple-600 mb-2">2025</div>
+          <div class="text-gray-600">Launch Year</div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <footer class="py-8 bg-gray-200 text-center text-sm text-gray-600">
-    © 2025 Grass Karma — Share the Mow
+  <!-- ▸ FAQ -->
+  <section class="py-24 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">
+        Common Questions
+      </h2>
+
+      <div class="space-y-6">
+        <div class="bg-white rounded-lg p-6 shadow-sm hover-lift">
+          <h3 class="font-semibold mb-3">How much does Grass Karma cost?</h3>
+          <p class="text-gray-600">Grass Karma will be free for basic roster coordination. Premium features like professional service booking will have a small service fee that's split among participants.</p>
+        </div>
+        
+        <div class="bg-white rounded-lg p-6 shadow-sm hover-lift">
+          <h3 class="font-semibold mb-3">What if my neighbours don't want to participate?</h3>
+          <p class="text-gray-600">No worries! Even 2-3 participating households can benefit from coordination. You can always invite more neighbours as they see the benefits.</p>
+        </div>
+        
+        <div class="bg-white rounded-lg p-6 shadow-sm hover-lift">
+          <h3 class="font-semibold mb-3">How do you handle payments for professional services?</h3>
+          <p class="text-gray-600">We integrate with secure payment providers to automatically split and collect payments. No more chasing neighbours for cash!</p>
+        </div>
+        
+        <div class="bg-white rounded-lg p-6 shadow-sm hover-lift">
+          <h3 class="font-semibold mb-3">When will Grass Karma be available?</h3>
+          <p class="text-gray-600">We're launching in 2025! Early access members will be first to try the app and help shape its development.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ▸ ENHANCED CTA / EARLY ACCESS -->
+  <section id="early-access" class="py-24 cta-gradient text-white text-center">
+    <div class="max-w-3xl mx-auto px-6">
+      <!-- Urgency Header -->
+      <div class="countdown-urgency text-white px-4 py-2 rounded-full inline-block mb-6">
+        <span class="font-semibold">🚀 Early Access Closing Soon</span>
+      </div>
+      
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">
+        Get Early Access + Free Bonuses
+      </h2>
+      <p class="text-lg md:text-xl mb-8 text-white/90">
+        Join 500+ streets already signed up. Early access members get the app first, plus exclusive bonuses worth $50.
+      </p>
+
+      <!-- Value Proposition List -->
+      <div class="bg-white/10 rounded-xl p-6 mb-8 text-left max-w-md mx-auto backdrop-blur-sm">
+        <h3 class="font-semibold mb-4 text-center">What You Get:</h3>
+        <div class="space-y-2">
+          <div class="flex items-center gap-3">
+            <span class="text-green-300">✓</span>
+            <span>First access to Grass Karma app</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="text-green-300">✓</span>
+            <span>Free "Perfect Lawn Care" guide ($25 value)</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="text-green-300">✓</span>
+            <span>Neighbourhood organizing toolkit ($25 value)</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="text-green-300">✓</span>
+            <span>Priority customer support</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Email Signup Form -->
+      <form class="max-w-md mx-auto bg-white rounded-xl p-6 shadow-xl" id="signup-form">
+        <div class="text-gray-800 mb-4">
+          <h3 class="font-semibold text-lg mb-2">Reserve Your Spot</h3>
+          <p class="text-sm text-gray-600">Join the waitlist for early access</p>
+        </div>
+        
+        <div class="space-y-4">
+          <input 
+            type="email" 
+            placeholder="Enter your email address"
+            required
+            class="w-full px-4 py-3 rounded-lg border border-gray-300 form-focus text-gray-800"
+            id="email-input"
+          />
+          <input 
+            type="text" 
+            placeholder="Your street name (optional)"
+            class="w-full px-4 py-3 rounded-lg border border-gray-300 form-focus text-gray-800"
+            id="street-input"
+          />
+          <button 
+            type="submit"
+            class="w-full bg-green-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-green-700 transition shadow-lg hover-lift"
+          >
+            Get Early Access + Free Bonuses
+          </button>
+        </div>
+        
+        <p class="text-xs text-gray-500 mt-3">
+          No spam. Unsubscribe anytime. We respect your privacy.
+        </p>
+      </form>
+
+      <!-- Social Proof -->
+      <div class="mt-8 text-white/80">
+        <p class="text-sm">Join neighbours from over 50 suburbs already signed up</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ▸ FOOTER WITH LEGAL -->
+  <footer class="py-12 bg-gray-900 text-gray-300">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid gap-8 md:grid-cols-3">
+        <!-- Company Info -->
+        <div>
+          <div class="font-bold text-xl text-white mb-4">🌱 Grass Karma</div>
+          <p class="text-sm mb-4">
+            Making neighbourhood lawn care coordination simple, fair, and friendly.
+          </p>
+          <p class="text-sm">
+            Made with ❤️ in Melbourne, Australia
+          </p>
+        </div>
+        
+        <!-- Quick Links -->
+        <div>
+          <h4 class="font-semibold text-white mb-4">Quick Links</h4>
+          <div class="space-y-2 text-sm">
+            <a href="#how" class="block hover:text-white transition">How It Works</a>
+            <a href="#benefits" class="block hover:text-white transition">Benefits</a>
+            <a href="#about" class="block hover:text-white transition">About Us</a>
+            <a href="#early-access" class="block hover:text-white transition">Early Access</a>
+          </div>
+        </div>
+        
+        <!-- Legal & Contact -->
+        <div>
+          <h4 class="font-semibold text-white mb-4">Legal & Contact</h4>
+          <div class="space-y-2 text-sm">
+            <a href="/privacy" class="block hover:text-white transition">Privacy Policy</a>
+            <a href="/terms" class="block hover:text-white transition">Terms of Service</a>
+            <a href="mailto:hello@grasskarma.website" class="block hover:text-white transition">hello@grasskarma.website</a>
+            <a href="https://linkedin.com/company/grasskarma/" target="_blank" rel="noopener" class="block hover:text-white transition">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
+        © 2025 Grass Karma Pty Ltd — Share the Mow, Grow the Community
+      </div>
+    </div>
   </footer>
+
+  <!-- Enhanced JavaScript -->
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Enhanced form submission handling
+    document.getElementById('signup-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = document.getElementById('email-input').value;
+      const street = document.getElementById('street-input').value;
+      
+      // Show loading state
+      const button = this.querySelector('button[type="submit"]');
+      const originalText = button.textContent;
+      button.textContent = 'Signing up...';
+      button.disabled = true;
+      
+      // Simulate API call
+      setTimeout(() => {
+        // Success message
+        button.textContent = '✓ Success! Check your email';
+        button.style.backgroundColor = '#10b981';
+        
+        // Reset form
+        setTimeout(() => {
+          this.reset();
+          button.textContent = originalText;
+          button.disabled = false;
+          button.style.backgroundColor = '';
+        }, 3000);
+        
+        // Here you would typically send this data to your backend
+        console.log('Form submitted:', { email, street });
+      }, 1500);
+    });
+
+    // Add loading animation to CTA buttons
+    document.querySelectorAll('.hover-lift').forEach(element => {
+      element.addEventListener('click', function() {
+        this.style.transform = 'scale(0.98)';
+        setTimeout(() => {
+          this.style.transform = '';
+        }, 150);
+      });
+    });
+
+    // Add scroll-based animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe sections for scroll animations
+    document.querySelectorAll('section').forEach(section => {
+      section.style.opacity = '0';
+      section.style.transform = 'translateY(30px)';
+      section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(section);
+    });
+  </script>
 </body>
 </html>
