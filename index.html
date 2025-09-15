@@ -108,7 +108,7 @@
       background: linear-gradient(135deg, #059669 0%, #047857 100%);
     }
 
-    .footer-bg { background: linear-gradient(135deg, #1b2e22 0%, #208a6e 100%); }
+    .footer-bg { background: #39b54a; }
 
     .cta-gradient {
       background:
@@ -265,72 +265,60 @@
   <section id="about" class="py-32 bg-white">
     <div class="max-w-6xl mx-auto px-6">
       <h2 class="text-4xl md:text-5xl font-bold text-center mb-20">About Grass Karma</h2>
-
-      <div class="grid gap-16 lg:grid-cols-2 lg:items-start">
-        <div class="bg-gray-50 rounded-xl p-10 hover-lift h-full">
-          <div class="flex items-center mb-8">
-            <div class="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center text-white text-3xl font-bold mr-6">👨‍💼</div>
-            <div>
-              <h3 class="text-2xl font-semibold">Our Story</h3>
-              <p class="text-gray-600 text-lg">Founded by neighbours, for neighbours</p>
-            </div>
-          </div>
-          <p class="text-gray-600 mb-6 text-lg leading-relaxed">
-            Grass Karma was born from a simple frustration: coordinating lawn care with neighbours shouldn't be harder than rocket science. After years of awkward WhatsApp groups and forgotten rosters, we built the solution we wished existed.
-          </p>
-          <p class="text-gray-600 text-lg leading-relaxed">
-            We're a small team based in Melbourne, passionate about building stronger communities one street at a time.
-          </p>
-        </div>
-
-        <div class="space-y-8">
-          <div class="flex items-start gap-6">
-            <div class="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-              <span class="text-green-600 text-2xl">🤝</span>
-            </div>
-            <div>
-              <h4 class="font-semibold mb-3 text-2xl">Community First</h4>
-              <p class="text-gray-600 leading-relaxed text-lg">We believe in the power of neighbours working together to create better streets.</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-6">
-            <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-              <span class="text-blue-600 text-2xl">🔒</span>
-            </div>
-            <div>
-              <h4 class="font-semibold mb-3 text-2xl">Privacy Protected</h4>
-              <p class="text-gray-600 leading-relaxed text-lg">Your data stays secure. We never share personal information with third parties.</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-6">
-            <div class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
-              <span class="text-purple-600 text-2xl">💚</span>
-            </div>
-            <div>
-              <h4 class="font-semibold mb-3 text-2xl">Environmental Impact</h4>
-              <p class="text-gray-600 leading-relaxed text-lg">Coordinated mowing reduces emissions and promotes sustainable neighbourhood practices.</p>
-            </div>
-          </div>
-        </div>
+         <div class="grid gap-16 lg:grid-cols-2 lg:items-start">
+  <!-- Our Story (left side, takes one column) -->
+  <div class="bg-gray-50 rounded-xl p-10 hover-lift h-full">
+    <div class="flex items-center mb-8">
+      <div class="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center text-white text-3xl mr-6">
+        👨‍💼
       </div>
-
-      <div class="mt-20 grid gap-10 md:grid-cols-3 text-center">
-        <div class="bg-green-50 rounded-lg p-8 hover-lift">
-          <div class="text-4xl font-bold text-green-600 mb-3">50+</div>
-          <div class="text-gray-600 text-lg">Streets Already Interested</div>
-        </div>
-        <div class="bg-blue-50 rounded-lg p-8 hover-lift">
-          <div class="text-4xl font-bold text-blue-600 mb-3">Australian</div>
-          <div class="text-gray-600 text-lg">Made & Based</div>
-        </div>
-        <div class="bg-purple-50 rounded-lg p-8 hover-lift">
-          <div class="text-4xl font-bold text-purple-600 mb-3">2025</div>
-          <div class="text-gray-600 text-lg">Launch Year</div>
-        </div>
+      <div>
+        <h3 class="text-2xl font-semibold">Our Story</h3>
+        <p class="text-gray-600 text-lg">Founded by neighbours, for neighbours</p>
       </div>
     </div>
+    <p class="text-gray-600 mb-6 leading-relaxed text-lg">
+      Grass Karma was born from a simple frustration: coordinating lawn care with neighbours shouldn't be harder than rocket science. After years of awkward WhatsApp groups and forgotten rosters, we built the solution we wished existed.
+    </p>
+    <p class="text-gray-600 leading-relaxed text-lg">
+      We're a small team based in Melbourne, passionate about building stronger communities one street at a time.
+    </p>
+  </div>
+
+  <!-- Right-hand side (stack the three smaller cards) -->
+  <div class="space-y-8">
+    <div class="flex items-start gap-6">
+      <div class="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+        <span class="text-green-600 text-2xl">🤝</span>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-3 text-2xl">Community First</h4>
+        <p class="text-gray-600 leading-relaxed text-lg">We believe in the power of neighbours working together to create better streets.</p>
+      </div>
+    </div>
+
+    <div class="flex items-start gap-6">
+      <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+        <span class="text-blue-600 text-2xl">🔒</span>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-3 text-2xl">Privacy Protected</h4>
+        <p class="text-gray-600 leading-relaxed text-lg">Your data stays secure. We never share personal information with third parties.</p>
+      </div>
+    </div>
+
+    <div class="flex items-start gap-6">
+      <div class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+        <span class="text-purple-600 text-2xl">💚</span>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-3 text-2xl">Environmental Impact</h4>
+        <p class="text-gray-600 leading-relaxed text-lg">Coordinated mowing reduces emissions and promotes sustainable neighbourhood practices.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
   </section>
 
   <!-- FAQ -->
